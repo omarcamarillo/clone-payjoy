@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+body{
+    /* background:  #d7ffe8; */
+    background: #fff;  
+}
+header{
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    height: 80px;
+}
+header .container_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+.container_header .left-content{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.container_header .left-content .logo{
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+}
+.container_header .left-content .menu nav ul{
+    display: flex;
+    gap: 10px;
+}
+.container_header .left-content .menu nav ul a{
+    color: #000;
+    padding: 8px 12px;
+    border-radius: 6px;
+    position: relative;
+    font-size: 16px;
+}
+.container_header .left-content .menu nav ul a:hover{
+    color: #00be4f;
+}
+.container_header .ctn-header button{
+    border: none;
+    background: #fff;
+    width: 100%;
+    font-size: 16px;
+    box-shadow: -8px -8px 15px rgba(255, 255, 255, .1),5px 5px 15px rgba(0, 0, 0, .2);
+    padding: 18px 32px;
+    height: max-content;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 100ms ease;
+}
+.container_header .ctn-header button:hover{
+    background: #000;
+    color: #fff;
+}
+.container_header .ctn-header button:active{
+    transform: scale(.8);
+}
+/*Burger Icon*/
+.container_header .burger{
+    position: initial;
+    width: 28px;
+    height: 28px;
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+.container_header .burger span{
+    width: 100%;
+    height: 1px;
+    background: #000;
+    position: relative;
+    border-radius: 4px;
+    transition: all 300ms ease;
+    transform-origin: left;
+    right: 0;
+}
+/*ICON_MENU-ACTIVE*/
+.container_header .burger.icon__menu-active span.col__span-1{
+    transform: rotate(44deg);
+    opacity: 1;
+    background: #276842;
+}
+.container_header .burger.icon__menu-active span.col__span-2{
+    right: -8px;
+    opacity: 0;
+}
+.container_header .burger.icon__menu-active span.col__span-3{
+    transform: rotate(-44deg);
+    opacity: 1;
+    background: #4ec47f;
+}
+/*Media Querys template responsive*/
+@media screen and (max-width: 1024px){
+    .container_header .burger{
+        display: flex;
+        flex-direction: column;
+    }
+    .container_header .left-content .menu{
+        position: fixed;
+        background: #fff;
+        width: 100%;
+        max-width: 280px;
+        height: 100%;
+        top: 0;
+        left: -100%;
+        transition: all 500ms ease;
+        z-index: 20;
+        opacity: 0;
+        padding: 0 28px;
+        padding-top: 90px;
+        box-shadow: 0 4px 25px -22px black;    
+    }
+    .container_header .left-content .menu.menu_active{
+        left: 0;
+        opacity: 1;
+    }
+    .container_header .left-content .menu nav ul{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    /*Items que ya no se visualizan*/
+    .container_header .ctn-header{
+        display: none;
+    }
+}
